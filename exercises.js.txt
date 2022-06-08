@@ -1,0 +1,192 @@
+/*0---հետաքրքիր տարբերակ  է արայը կիսելու մեթոդն է */
+function searchElement1(arr, el) {
+  left = -1;
+  right = arr.length;
+  while (right - left > 1) {
+    mid = Math.floor((left + right) / 2);
+    if (arr[mid] === el) {
+      return mid;
+    }
+    if (arr[mid] > el) {
+      right = mid;
+    } else {
+      left = mid;
+    }
+  }
+  return -1;
+}
+
+/*1---*/
+let question1 = prompt ("Ask a capital of Armenia");
+let points =0;
+if (question1 === "Yerevan") {
+    points= points+1;
+} 
+let question2 = prompt ("Ask a capital of Russia");
+if (question2 === "Moscow") {
+    points= points+1;
+} 
+let question3 = prompt ("Ask a capital of Georgia");
+if (question3 === "Tbilisi") {
+    points= points+1;
+} 
+let question4 = prompt ("Ask a capital of England");
+if (question4 === "London") {
+    points= points+1;
+} 
+console.log (points)
+
+
+/*2--- */
+let array = ["Hakob","Poghos","Petros","Aramis","Nika"];
+alert(array)
+let i = 0;
+let j = array.length-1;
+while (i < array.length/2) {
+    k = array[i];
+    array[i] = array[j];
+    array[j] = k;
+    i++;
+    j--
+}
+alert(array)// hakarak hertakanutyamb e tpum elementnery
+
+function sum (a,b) {
+    return a+b
+}
+
+function difference (a,b) {
+    return a-b
+}
+
+function product (a,b) {
+    return a*b
+}
+
+function findDivisionBalance (a,b) {
+    return a%b
+}
+
+function multiplesOfThree (a) {
+    return a%3===0
+}
+
+function findDivisorsByNumber (a) {
+    return a%3===0
+}
+
+
+/*3----*/
+function maxElOfArray (arr) {
+    let numbersArray =  arr.sort((a,b) => a-b).filter(el => typeof el === 'number')
+    return numbersArray[numbersArray.length-1]
+}
+
+
+function maxElOfArray (arr) {
+    let numbersArray =  arr.sort((a,b) => a-b).filter(el => typeof el === 'number')
+    return numbersArray[0]
+}
+
+/*4---*/
+function doubleNumber (arr) {
+    return arr.map (function (el) {
+        if(typeof el === 'number') {
+            return el*2
+        }
+        return el
+    })
+}
+
+
+function doubleArray (arr) {
+    return arr.map(function (a) {
+        return (typeof a === 'number')?  a*2 :  a
+    })   
+}
+
+
+/*5---*/
+function indexsOfOddsArray (arr) {
+    let res = []
+    for(let i = 0; i < arr.length; i++) {
+       if(i%2 !== 0) {
+           res.push(arr[i])
+       }
+    } 
+    return res
+}
+
+
+ function indexsOfOddsArray (arr) {
+     let res = [];
+     arr.forEach (function (el) {
+        if(arr.indexOf(el)%2 !== 0) {
+            res.push(el)
+        }
+     })  
+     return res
+}
+
+
+/*6---*/
+function isGreaterThanThatNumber (numArr, num) {
+    return numArr.filter(el => el > num)
+}
+
+
+/*7---*/
+function actionAccordingToTheData (num1, num2, str) {
+    if (str === 'sum') {
+        return num1 + num2
+    }
+    if (str === 'divide' && num2 !== 0) {
+        return num1 / num2
+    }
+    if (str === 'minus') {
+        return num1 - num2
+    }
+    if (str === 'multiply') {
+        return num1 * num2
+    }
+    return -1
+}
+
+
+/*8---*/
+function sumFirstAndNextIsGreatherThanSumOfElementsArray (numArr) {
+    const sumFirstAndNextIndex = numArr[0] + numArr[numArr.length-1];
+    const sumOfElementsArray = numArr.reduce((el1, el2) => el1 + el2)
+    if (sumFirstAndNextIndex > sumOfElementsArray) { 
+        return true 
+    } else {
+        return false
+    }
+}
+
+
+function sumFirstAndNextIsGreatherThanSumOfElementsArray (numArr) {
+    let sumFirstAndNextIndex = numArr[0] + numArr[numArr.length-1];
+    let sumOfElementsArray = numArr.reduce((el1, el2) => el1 + el2)
+    return (sumFirstAndNextIndex > sumOfElementsArray) ? true : false
+}
+
+/*9---*/
+function sum (arr) {
+    let sum1 = 0
+    arr.forEach(el => sum1 += el)
+    return sum1
+}
+
+
+/*10---*/
+function thereIsAKeyInTheObject(object, string) {
+    for (let key in object) {
+        if (key === string) {
+            return object[key]
+        } 
+        return false
+    }
+}
+thereIsAKeyInTheObject(obj, 'id')//5
+thereIsAKeyInTheObject(obj, 'name')//false
