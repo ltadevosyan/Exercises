@@ -190,3 +190,16 @@ function thereIsAKeyInTheObject(object, string) {
 }
 thereIsAKeyInTheObject(obj, 'id')//5
 thereIsAKeyInTheObject(obj, 'name')//false
+
+
+function sum(arr) {
+    return arr.reduce (function (agr, val) {
+        if (Array.isArray(val)) {
+            return agr + sum(val);
+        }
+        return agr +val;
+    }, 0)
+}
+
+sum([0,5,8,[1,5,4],[6,4,[2,3,[1,2,3],5],2,2],11])
+
